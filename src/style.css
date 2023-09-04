@@ -32,4 +32,23 @@ body{
 .output-screen {
     grid-column: 1 / -1;
     /* spans from the first to the last grid column, taking up the entire width of the grid. */
+    background-color: #2a2e37;
+    display: flex;   /* creates a flex container */
+    flex-direction: column;  /* flex items will be stacked vertically */
+    align-items: flex-end;   /* makes the text inside the screen to align at the right part */
+    justify-content: space-around;  /* dynamically change space between the 2 outputs */
+
+    padding: .75rem;   /* put some space between the o/p and the below grid */
+    word-wrap: break-word;
+    word-break: break-all;  /* makes the o/p screen length increase wrt the o/p */
+}
+
+.output-screen .prev-operand{    /* better practise as it becmomes more specific  */
+    color: rgba(255, 255, 255, .75);   /* .75 adds transparency */
+    font-size: 1.5rem;
+}
+
+.output-screen .curr-operand{
+    color: white;
+    font-size: 2.5rem;
 }

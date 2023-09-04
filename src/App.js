@@ -5,8 +5,8 @@ function App() {
       <div className="calc-text">My <br /> Calculator</div>
       <div className="calculator-grid">  {/*  the outermost  */}
         <div className="output-screen">  {/* the display screen */}
-          <div className="prev-operand"></div>  {/* the prev output that is gets pushed up when we enter another operand */}
-          <div className="curr-operand"></div>  {/* the operand we enter after prev-operand */}
+          <div className="prev-operand">123*566</div>  {/* the prev output that is gets pushed up when we enter another operand */}
+          <div className="curr-operand">554625554625554625554625</div>  {/* the operand we enter after prev-operand */}
         </div>
 
         <button className="spans">AC</button>
