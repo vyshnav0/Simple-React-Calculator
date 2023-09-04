@@ -9,12 +9,27 @@ body{
     background: linear-gradient(45deg, rgba(69,19,80,255), #b266c7);
 }
 
-  
-.my-calc{
+.calc-text{
     font-size: 26px;
     font-weight: bold;
     color: #fefbff;
 }
+
+.calculator-grid{
+    display: grid;
+    margin-top: 2rem;
+    grid-template-columns: repeat(4, 6rem);   /* this created a grid with 4 columns with width 6*/
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+    /* minmax- when there is more content on the screen than screen size auto comes into play else minimum of 7 is used */
+    /* do the same to 5 more rows with 6rem width */
+
+}
 .spans{
     color: red;
+    grid-column: span 2;    /* makes width of AC and EQUAL button twice that of normal column */
+}
+
+.output-screen {
+    grid-column: 1 / -1;
+    /* spans from the first to the last grid column, taking up the entire width of the grid. */
 }
