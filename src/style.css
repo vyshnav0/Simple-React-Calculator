@@ -1,0 +1,20 @@
+*, *::before, *::after {       /* remove this before and after last if not needed */
+    box-sizing: border-box;
+    /* border-box makes the paddings and borders to be included within the specifies width and height*/
+    /* otherwise by default the sum of padding and border can be added upto outside the elements dims */
+}
+
+body{
+    margin: 0;
+    background: linear-gradient(45deg, rgba(69,19,80,255), #b266c7);
+}
+
+  
+.my-calc{
+    font-size: 26px;
+    font-weight: bold;
+    color: #fefbff;
+}
+.spans{
+    color: red;
+}
