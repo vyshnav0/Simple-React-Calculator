@@ -2,7 +2,7 @@ import "./style.css"
 function App() {
   return (
     <>
-      <div className="calc-text">My <br /> Calculator</div>
+      <div className="calc-text">My<br/>Calculator</div>
       <div className="calculator-grid">  {/*  the outermost  */}
         <div className="output-screen">  {/* the display screen */}
           <div className="prev-operand">123*566</div>  {/* the prev output that is gets pushed up when we enter another operand */}
@@ -27,7 +27,6 @@ function App() {
         <button>.</button>
         <button>0</button>
         <button className="purple-button spans">=</button>
-
       </div>
     </>
   );

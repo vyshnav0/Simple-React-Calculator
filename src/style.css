@@ -1,75 +1,105 @@
-*, *::before, *::after {       /* remove this before and after last if not needed */
+*,
+*::before,
+*::after {
+    /* remove this before and after last if not needed */
     box-sizing: border-box;
     /* border-box makes the paddings and borders to be included within the specifies width and height*/
     /* otherwise by default the sum of padding and border can be added upto outside the elements dims */
 }
 
-body{
+body {
     margin: 0;
-    background: linear-gradient(45deg, rgba(69,19,80,255), #b266c7);
+    background: linear-gradient(45deg, rgba(69, 19, 80, 255), #b266c7);
 }
 
-.calc-text{
-    font-size: 26px;
+.calc-text {
+    /* font-size: 4rem; */
     font-weight: bold;
     color: #fefbff;
+    /* margin-top: 5rem; */
 }
 
-.calculator-grid{
-    /* margin: 0 auto; */
-    border: 5px solid white;
-    border-radius: 20px;
+.calculator-grid {
     display: grid;
-    margin-top: 2rem;
-    grid-template-columns: repeat(4, 6rem);   /* this created a grid with 4 columns with width 6*/
+    border: 8px solid white;
+    border-radius: 20px; 
+    margin-top: 0.1rem;
+    width: fit-content;
+    margin-right: auto;
+    /* Push calculator to the right */
+    margin-left: 45rem;
+    /* Add space from the left of the calculator */
+    justify-content: center;
+    grid-template-columns: repeat(4, 6rem);
+    /* this created a grid with 4 columns with width 6*/
     grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
-    /* minmax- when there is more content on the screen than screen size auto comes into play else minimum of 7 is used */
-    /* do the same to 5 more rows with 6rem width */
+    /* minmax(7rem, auto) sets the first row's height to be a minimum of 7rem and auto-expanding if needed based on the content.
+       repeat(5, 6rem) sets the next 5 rows to have a fixed height of 6rem. */
 }
 
-.calculator-grid > button{
+.calculator-grid>button {
     cursor: pointer;
     font-size: 2rem;
     color: #c6cdc0;
     border: 1px solid #2a2e37;
     outline: none;
-    background-color: #2f3646;
-    
-}
-
-.purple-button {
-  background-color: #c45bdc  !important;
-}
-.purple-text{
-    color: #c45bdc !important;
-}
-
-
-.spans{
-    grid-column: span 2 ;    /* makes width of AC and EQUAL button twice that of normal column */
+    background-color: rgb(47, 54, 70, .75);
 }
 
 .output-screen {
-    border-radius: 20px 20px 0 0;     /* makes top left and right of display curve */
+    border: 5px ;
+    border-radius: 20px 20px 0 0;
     grid-column: 1 / -1;
     /* spans from the first to the last grid column, taking up the entire width of the grid. */
     background-color: #2a2e37;
-    display: flex;   /* creates a flex container */
-    flex-direction: column;  /* flex items will be stacked vertically */
-    align-items: flex-end;   /* makes the text inside the screen to align at the right part */
-    justify-content: space-around;  /* dynamically change space between the 2 outputs */
-
-    padding: .75rem;   /* put some space between the o/p and the below grid */
+    display: flex;
+    /* creates a flex container */
+    flex-direction: column;
+    /* flex items will be stacked vertically */
+    align-items: flex-end;
+    /* makes the text inside the screen to align at the right part */
+    justify-content: space-around;
+    /* dynamically change space between the 2 outputs */
+    padding: .75rem;
+    /* put some space between the o/p and the screen boundary */
     word-wrap: break-word;
-    word-break: break-all;  /* makes the o/p screen length increase wrt the o/p */
+    word-break: break-all;
+    /* makes the o/p screen length increase wrt the o/p */
+    /* box-sizing: border-box; */
 }
 
-.output-screen .prev-operand{    /* better practise as it becmomes more specific  */
-    color: rgba(255, 255, 255, .75);   /* .75 adds transparency */
+.output-screen .prev-operand {
+    /* better practise as it becmomes more specific  */
+    color: rgba(255, 255, 255, .75);
+    /* .75 adds transparency */
     font-size: 1.5rem;
 }
 
-.output-screen .curr-operand{
+.output-screen .curr-operand {
     color: white;
     font-size: 2.5rem;
+}
+
+.calculator-grid>button:hover,
+.calculator-grid>button:focus {
+    background-color: rgb(47, 54, 70, 0.9);
+}
+
+.purple-button {
+    background-color: rgb(196, 91, 220, .75) !important;
+    font-size: 3rem !important;
+}
+
+.purple-button:hover,
+.purple-button:focus {
+    background-color: rgb(196, 91, 220, 09) !important;
+}
+
+.purple-text {
+    color: #c45bdc !important;
+}
+
+.spans {
+    grid-column: span 2;
+    /* makes width of AC and EQUAL button twice that of normal column */
 }
