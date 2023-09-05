@@ -9,24 +9,24 @@ function App() {
           <div className="curr-operand">554625554625554625554625</div>  {/* the operand we enter after prev-operand */}
         </div>
 
-        <button className="spans">AC</button>
-        <button>DEL</button>
-        <button>÷</button>
+        <button className="purple-text spans">AC</button>
+        <button className="purple-text">DEL</button>
+        <button className="purple-button" >÷</button>
         <button>7</button>
         <button>8</button>
         <button>9</button>
-        <button>×</button>
+        <button className="purple-button">×</button>
         <button>4</button>
         <button>5</button>
         <button>6</button>
-        <button>-</button>
+        <button className="purple-button">-</button>
         <button>1</button>
         <button>2</button>
         <button>3</button>
-        <button>+</button>
+        <button className="purple-button">+</button>
         <button>.</button>
         <button>0</button>
-        <button className="spans">=</button>
+        <button className="purple-button spans">=</button>
 
       </div>
     </>

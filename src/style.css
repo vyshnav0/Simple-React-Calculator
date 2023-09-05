@@ -16,20 +16,41 @@ body{
 }
 
 .calculator-grid{
+    /* margin: 0 auto; */
+    border: 5px solid white;
+    border-radius: 20px;
     display: grid;
     margin-top: 2rem;
     grid-template-columns: repeat(4, 6rem);   /* this created a grid with 4 columns with width 6*/
     grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
     /* minmax- when there is more content on the screen than screen size auto comes into play else minimum of 7 is used */
     /* do the same to 5 more rows with 6rem width */
-
 }
+
+.calculator-grid > button{
+    cursor: pointer;
+    font-size: 2rem;
+    color: #c6cdc0;
+    border: 1px solid #2a2e37;
+    outline: none;
+    background-color: #2f3646;
+    
+}
+
+.purple-button {
+  background-color: #c45bdc  !important;
+}
+.purple-text{
+    color: #c45bdc !important;
+}
+
+
 .spans{
-    color: red;
-    grid-column: span 2;    /* makes width of AC and EQUAL button twice that of normal column */
+    grid-column: span 2 ;    /* makes width of AC and EQUAL button twice that of normal column */
 }
 
 .output-screen {
+    border-radius: 20px 20px 0 0;     /* makes top left and right of display curve */
     grid-column: 1 / -1;
     /* spans from the first to the last grid column, taking up the entire width of the grid. */
     background-color: #2a2e37;
