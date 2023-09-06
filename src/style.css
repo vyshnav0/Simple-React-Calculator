@@ -13,17 +13,23 @@ body {
 }
 
 .calc-text {
-    /* font-size: 4rem; */
+    position: relative;
+    top: 15rem;
+    left: 10rem;
+    width: fit-content;
+
+    font-size: 50px;
     font-weight: bold;
     color: #fefbff;
-    /* margin-top: 5rem; */
 }
 
 .calculator-grid {
+    position: absolute;
+    top: 1rem;
     display: grid;
     border: 8px solid white;
     border-radius: 20px; 
-    margin-top: 0.1rem;
+    /* margin-top: 0.1rem; */
     width: fit-content;
     margin-right: auto;
     /* Push calculator to the right */
