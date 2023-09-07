@@ -13,6 +13,13 @@ export const ACTIONS = {
 function reducer(state, { type, payload }){
   switch (type) {
     case ACTIONS.ENTER_DIGIT:
+      if (payload.digit === '0' &&  state.curOperand === '0') {
+        return state;  // if the current operand and the entrerd operand is 0 then we dont need to display 00 just 0 will do
+      }
+      if (payload.digit === '.' && state.curOperand.includes('.')) {
+        return state; // no need for more than one . in a number
+      }
+      
       return {
          ...state,
          curOperand: `${state.curOperand || ""}${payload.digit}`,
