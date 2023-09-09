@@ -5,6 +5,13 @@ function reducer(state, { type, payload }) {
 
   switch (type) {
     case ACTIONS.ENTER_DIGIT:
+      if (state.overwrite) {   // if we need to overwrite the current result to the operand we are typing now
+        return{
+          ...state,
+          curOperand: payload.digit,
+          overwrite: false
+        }
+      }
       if (payload.digit === '0' && state.curOperand === '0') {
         return state;  // if the current operand and the entrerd operand is 0 then we dont need to display 00 just 0 will do
       }
@@ -50,8 +57,9 @@ function reducer(state, { type, payload }) {
       }
       return{     // normal '=' use, find the result and display in current make others null
         ...state,
+        overwrite: true,    // we need to overwrite the current operaand when we type something instead of appending it at the end of the result
         prevOperand: null,
-        operation: null,
+        operation: null,    
         curOperand: evaluate(state)
       }
 
