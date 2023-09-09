@@ -5,7 +5,7 @@ import reducer from "./utils/Reducer";
 import "./style.css"
 
 export const ACTIONS = {
-  ENTER_DIGIT: 'enter',
+  ENTER_DIGIT: 'enter',   // the string values are given only for readable reference and type safety.
   CLEAR: 'clear',
   DELETE_DIGIT: 'delete',
   CHOOSE_OPERATION: 'chooseOperation',
@@ -27,7 +27,7 @@ function App() {
         </div>
 
         <button className="purple-text spans" onClick={() => dispatch({ type: ACTIONS.CLEAR })}>AC</button>
-        <button className="purple-text">DEL</button>
+        <button className="purple-text" onClick={() => dispatch({ type: ACTIONS.DELETE_DIGIT })}>DEL</button>
         <OperationsButtons operation="÷" dispatch={dispatch} myClass="purple-button" />
         <DigitButtons digit="7" dispatch={dispatch} />
         <DigitButtons digit="8" dispatch={dispatch} />

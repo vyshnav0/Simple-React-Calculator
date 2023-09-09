@@ -23,6 +23,35 @@ function reducer(state, { type, payload }) {
         curOperand: `${state.curOperand || ""}${payload.digit}`,
       }
 
+    case ACTIONS.DELETE_DIGIT:
+      if (state.overwrite) {   // after we perform a normal calculation (i.e press '=' after 2+3, we get results on current-output)
+        return {
+          ...state,
+          curOperand: null,
+          overwrite: false
+        };
+      }
+      if (state.curOperand == null) {
+        if (state.prevOperand != null) { 
+          return{    // when (9 + ) and we press DEL the current operator should be  prev operand by removing operator
+            ...state,
+            curOperand: state.prevOperand,
+            operation: null,
+            prevOperand: null     // this one may cause some errors. keep an eye out
+          }
+        }
+        return state;
+      }
+      if (state.curOperand.length === 1){  
+        return{     // there is only one digit 
+          ...state,
+          curOperand: null
+        }
+      }
+      return {
+        ...state, 
+        curOperand: state.curOperand.slice(0, -1)
+      };
     case ACTIONS.CLEAR:
       return {}
 
@@ -62,6 +91,7 @@ function reducer(state, { type, payload }) {
         operation: null,    
         curOperand: evaluate(state)
       }
+
 
     default:
       return state;
