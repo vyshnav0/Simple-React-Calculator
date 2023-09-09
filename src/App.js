@@ -2,6 +2,7 @@ import { useReducer } from "react"
 import DigitButtons from "./components/DigitButtons";
 import OperationsButtons from "./components/OperationsButtons";
 import reducer from "./utils/Reducer";
+import NumberFormater from "./utils/NumberFormater";
 import "./style.css"
 
 export const ACTIONS = {
@@ -22,8 +23,8 @@ function App() {
       <div className="calc-text">History</div>
       <div className="calculator-grid">  {/*  the outermost  */}
         <div className="output-screen">  {/* the display screen */}
-          <div className="prev-operand">{prevOperand} {operation}</div>  {/* the prev output that is gets pushed up when we enter another operand */}
-          <div className="curr-operand"> {curOperand} </div>  {/* the operand we enter after prev-operand */}
+          <div className="prev-operand">{NumberFormater(prevOperand)} {operation}</div>  {/* the prev output that is gets pushed up when we enter another operand */}
+          <div className="curr-operand"> {NumberFormater(curOperand)} </div>  {/* the operand we enter after prev-operand */}
         </div>
 
         <button className="purple-text spans" onClick={() => dispatch({ type: ACTIONS.CLEAR })}>AC</button>
