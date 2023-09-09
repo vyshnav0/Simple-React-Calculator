@@ -9,7 +9,7 @@ export const ACTIONS = {
   CLEAR: 'clear',
   DELETE_DIGIT: 'delete',
   CHOOSE_OPERATION: 'chooseOperation',
-  EVALUATE: 'evaluate'
+  EQUALS: 'equal'
 };
 
 
@@ -43,7 +43,7 @@ function App() {
         <OperationsButtons operation="+" dispatch={dispatch} myClass="purple-button" />
         <DigitButtons digit="." dispatch={dispatch} />
         <DigitButtons digit="0" dispatch={dispatch} />
-        <button className="purple-button spans">=</button>
+        <button className="purple-button spans" onClick={() => dispatch({ type: ACTIONS.EQUALS })} >=</button>
       </div>
     </>
   );
