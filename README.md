@@ -75,7 +75,7 @@ The project structure is organized as follows:
 ## Reference
 
 - This project was developed with the guidance of a [video tutorial](https://youtu.be/DgRrrOt0Vr8) by [WebDevSimplified](https://www.youtube.com/@WebDevSimplified).
-- The calculator design inspiration for this project was taken from (https://youtu.be/u_jPLCZKgX4)
+- The design inspiration for this project was taken from (https://youtu.be/u_jPLCZKgX4)
 
 
 ## Contributing
