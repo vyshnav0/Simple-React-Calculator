@@ -8,6 +8,7 @@ A simple web-based calculator application built with React.
 - [Key Features](#key-features)
 - [Installation & Usage](#installation--usage)
 - [Project Structure](#project-structure)
+- [Refernce](#reference)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -70,6 +71,12 @@ The project structure is organized as follows:
   - `components/`: React components for digit buttons and operation buttons.
   - `utils/`: Utility functions for calculation and number formatting.
 - `style.css`: Stylesheet for the calculator's appearance.
+
+## Reference
+
+- This project was developed with the guidance of a [video tutorial](https://youtu.be/DgRrrOt0Vr8) by [WebDevSimplified](https://www.youtube.com/@WebDevSimplified).
+- The design inspiration for this project was taken from (https://youtu.be/u_jPLCZKgX4)
+
 
 ## Contributing
 
