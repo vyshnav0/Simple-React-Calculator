@@ -6,7 +6,7 @@ A simple web-based calculator application built with React.
 
 - [Introduction](#introduction)
 - [Key Features](#key-features)
-- [Installation & Usage](#installation-&-usage)
+- [Installation & Usage](#installation--usage)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
 - [License](#license)
@@ -32,8 +32,8 @@ This React Calculator App is a straightforward web application designed to perfo
    - Clone the repository to your local machine:
 
      ```bash
-     git clone https://github.com/yourusername/calculator-react-app.git
-     cd calculator-react-app
+     git clone https://github.com/vyshnav0/Simple-React-Calculator.git
+     cd Simple-React-Calculator
      ```
 
    - Install project dependencies:
