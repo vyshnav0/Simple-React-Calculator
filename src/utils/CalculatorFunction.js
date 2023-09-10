@@ -4,6 +4,7 @@ function evaluate({ curOperand, prevOperand, operation }) {
     const current = parseFloat(curOperand);
   
     if (isNaN(current) || isNaN(prev)) {
+      console.log("not a number");
       return "";
     }
     let result = "";

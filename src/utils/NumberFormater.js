@@ -4,7 +4,7 @@ const INTEGER_FORMATTER = new Intl.NumberFormat("en-US", {  // en-us gives numbe
 });
 
 function NumberFormater(operand) {
-    if (operand == null) return;   // if naN do nothing
+    if (operand == null) return "";   // if naN do nothing
 
     let [integer, decimal] = operand.split('.');  
     integer = INTEGER_FORMATTER.format(integer);    // format the integer part

@@ -13,18 +13,23 @@ export const ACTIONS = {
   EQUALS: 'equal'
 };
 
+const initialState = {
+  curOperand: 0,
+  prevOperand: null,
+  operation: ''
+};
 
 function App() {
   // state = {currentop, prevop and operation}
-  const [{ curOperand, prevOperand, operation }, dispatch] = useReducer(reducer, {});
+  const [{ curOperand, prevOperand, operation }, dispatch] = useReducer(reducer, initialState);
 
   return (
     <>
       <div className="calc-text">History</div>
       <div className="calculator-grid">  {/*  the outermost  */}
         <div className="output-screen">  {/* the display screen */}
-          <div className="prev-operand">{NumberFormater(prevOperand)} {operation}</div>  {/* the prev output that is gets pushed up when we enter another operand */}
-          <div className="curr-operand"> {NumberFormater(curOperand)} </div>  {/* the operand we enter after prev-operand */}
+          <div className="prev-operand">{prevOperand != null ? `${NumberFormater(String(prevOperand))} ${operation}` : ''}</div>  {/* the prev output that is gets pushed up when we enter another operand */}
+          <div className="curr-operand"> {curOperand != null ? NumberFormater(String(curOperand)) : ''} </div>  {/* the operand we enter after prev-operand */}
         </div>
 
         <button className="purple-text spans" onClick={() => dispatch({ type: ACTIONS.CLEAR })}>AC</button>

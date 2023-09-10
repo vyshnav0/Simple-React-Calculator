@@ -1,10 +1,17 @@
 import { ACTIONS } from "../App";
 import evaluate from "./CalculatorFunction";
 
+const initialState = {
+  curOperand: 0,
+  prevOperand: null,
+  operation: '',
+  overwrite: false
+};
 function reducer(state, { type, payload }) {
 
   switch (type) {
     case ACTIONS.ENTER_DIGIT:
+      console.log("enter digit");
       if (state.overwrite) {   // if we need to overwrite the current result to the operand we are typing now
         return{
           ...state,
@@ -52,10 +59,12 @@ function reducer(state, { type, payload }) {
         ...state, 
         curOperand: state.curOperand.slice(0, -1)
       };
+   
     case ACTIONS.CLEAR:
-      return {}
+      return initialState;
 
     case ACTIONS.CHOOSE_OPERATION:
+      console.log("choose operation");
       if (state.curOperand == null && state.prevOperand == null) {
         return state   // if there is no operand selected then we cant select an operation
       }
@@ -84,12 +93,13 @@ function reducer(state, { type, payload }) {
       if (state.curOperand == null || state.operation == null || state.prevOperand == null) {
         return state;     // either no operand or operators then do nothing but return current state
       }
+      const computed = evaluate(state);
       return{     // normal '=' use, find the result and display in current make others null
         ...state,
         overwrite: true,    // we need to overwrite the current operaand when we type something instead of appending it at the end of the result
         prevOperand: null,
         operation: null,    
-        curOperand: evaluate(state)
+        curOperand: computed
       }
 
 
