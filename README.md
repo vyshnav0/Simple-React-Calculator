@@ -93,4 +93,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-Feel free to customize this README further to include any additional information or branding specific to your project. Good luck with your React calculator app development!
